@@ -1,5 +1,5 @@
 #[inline(always)]
-pub unsafe fn sys_call0(mut num: usize) -> usize {
+pub unsafe fn sys_call0(mut num: isize) -> isize {
     asm!("syscall"
          : "+{rax}"(num)
          :
@@ -9,7 +9,7 @@ pub unsafe fn sys_call0(mut num: usize) -> usize {
 }
 
 #[inline(always)]
-pub unsafe fn sys_call1(mut num: usize, arg1: usize) -> usize {
+pub unsafe fn sys_call1(mut num: isize, arg1: isize) -> isize {
     asm!("syscall"
          : "+{rax}"(num)
          : "{rdi}"(arg1)
@@ -19,7 +19,7 @@ pub unsafe fn sys_call1(mut num: usize, arg1: usize) -> usize {
 }
 
 #[inline(always)]
-pub unsafe fn sys_call2(mut num: usize, arg1: usize, arg2: usize) -> usize {
+pub unsafe fn sys_call2(mut num: isize, arg1: isize, arg2: isize) -> isize {
     asm!("syscall"
          : "+{rax}"(num)
          : "{rdi}"(arg1) "{rsi}"(arg2)
@@ -29,7 +29,7 @@ pub unsafe fn sys_call2(mut num: usize, arg1: usize, arg2: usize) -> usize {
 }
 
 #[inline(always)]
-pub unsafe fn sys_call3(mut num: usize, arg1: usize, arg2: usize, arg3: usize) -> usize {
+pub unsafe fn sys_call3(mut num: isize, arg1: isize, arg2: isize, arg3: isize) -> isize {
     asm!("syscall"
          : "+{rax}"(num)
          : "{rdi}"(arg1) "{rsi}"(arg2) "{rdx}"(arg3)
@@ -40,12 +40,12 @@ pub unsafe fn sys_call3(mut num: usize, arg1: usize, arg2: usize, arg3: usize) -
 
 #[inline(always)]
 pub unsafe fn sys_call4(
-    mut num: usize,
-    arg1: usize,
-    arg2: usize,
-    arg3: usize,
-    arg4: usize,
-) -> usize {
+    mut num: isize,
+    arg1: isize,
+    arg2: isize,
+    arg3: isize,
+    arg4: isize,
+) -> isize {
     asm!("syscall"
          : "+{rax}"(num)
          : "{rdi}"(arg1) "{rsi}"(arg2) "{rdx}"(arg3) "{r10}"(arg4)
@@ -56,13 +56,13 @@ pub unsafe fn sys_call4(
 
 #[inline(always)]
 pub unsafe fn sys_call5(
-    mut num: usize,
-    arg1: usize,
-    arg2: usize,
-    arg3: usize,
-    arg4: usize,
-    arg5: usize,
-) -> usize {
+    mut num: isize,
+    arg1: isize,
+    arg2: isize,
+    arg3: isize,
+    arg4: isize,
+    arg5: isize,
+) -> isize {
     asm!("syscall"
          : "+{rax}"(num)
          : "{rdi}"(arg1) "{rsi}"(arg2) "{rdx}"(arg3) "{r10}"(arg4) "{r8}"(arg5)
@@ -73,14 +73,14 @@ pub unsafe fn sys_call5(
 
 #[inline(always)]
 pub unsafe fn sys_call6(
-    mut num: usize,
-    arg1: usize,
-    arg2: usize,
-    arg3: usize,
-    arg4: usize,
-    arg5: usize,
-    arg6: usize,
-) -> usize {
+    mut num: isize,
+    arg1: isize,
+    arg2: isize,
+    arg3: isize,
+    arg4: isize,
+    arg5: isize,
+    arg6: isize,
+) -> isize {
     asm!("syscall"
          : "+{rax}"(num)
          : "{rdi}"(arg1) "{rsi}"(arg2) "{rdx}"(arg3) "{r10}"(arg4) "{r8}"(arg5) "{r9}"(arg6)
