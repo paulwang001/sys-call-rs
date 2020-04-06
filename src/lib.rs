@@ -28,18 +28,3 @@ macro_rules! sys_call {
         $crate::platform::sys_call6($num, $arg1, $arg2, $arg3, $arg4, $arg5, $arg6)
     };
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        const WRITE: usize = 1;
-        const STDOUT: usize = 1;
-        let buf = b"Hello World!\n";
-        unsafe {
-            sys_call!(WRITE, STDOUT, buf.as_ptr() as usize, buf.len());
-        }
-    }
-}
