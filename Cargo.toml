@@ -1,10 +1,13 @@
 [package]
 name = "sys-call"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Matt Hunzinger <matthunz2@gmail.com>"]
 edition = "2018"
+license = "MIT"
+description = "System call macro for Rust"
+repository = "https://github.com/matthunz/sys-call-rs"
+documentation = "https://docs.rs/crate/sys-call"
+keywords = ["linux", "unix", "system"]
 
 [lib]
 name = "sys_call"
-
-[dependencies]
